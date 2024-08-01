@@ -1,7 +1,9 @@
 import './App.css'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import Foodcard from './components/Foodcard.jsx'
+import Footer from './components/Footer.jsx'
+import Header from './components/Header.jsx'
+import Navbar from './components/Navbar.jsx'
+import Exploremenuslider from './components/Exploremenuslider.jsx'
 
 function App() {
 
@@ -9,6 +11,7 @@ function App() {
     <>
     <Navbar/>
     <Header/>
+ <Exploremenuslider/>
     <Footer/>
     </>
   )

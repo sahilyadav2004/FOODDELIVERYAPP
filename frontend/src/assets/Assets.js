@@ -1,4 +1,4 @@
-import alooParantha from './alooParantha.jpeg'
+import alooParantha from './alooParatha.jpeg'
 import alootikkiburger from './alootikkiburger.jpg'
 import blackforest from './blackforest.webp'
 import blueberryCake from './blueberryCake.jpg'
@@ -21,7 +21,7 @@ import oreoShake from "./oreoShake.jpeg"
 import paneerParatha from "./paneerParatha.jpeg"
 import paneersamosa from "./paneersamosa.jpeg"
 import paneerSandwich from "./paneerSandwich.jpeg"
-import samosa from "./samosa"
+import samosa from "./samosa.jpeg"
 import springRoll from "./springRoll.jpeg"
 import strawberryCake from "./strawberryCake.jpeg"
 import vadaPav from "./vadaPav.jpg"
@@ -32,8 +32,8 @@ import veggieDelight from "./veggieDelight.jpeg"
 import veggieSandwich from "./veggieSandwich.jpg"
 
 
-export const assets={
-    alootikkiburger,
+export const Assets={
+     alootikkiburger,
     alooParantha,
     blackforest,
     blueberryCake,
@@ -104,7 +104,7 @@ export const menu_list = [
     },
     {
         menu_name:"Biryani",
-        menu_image: veggieBiryani
+        menu_image: matkavegbiryani
     }
 ]
 
@@ -337,7 +337,7 @@ export const menu_list = [
         {
             _id: "32",
             name: "Veg Biryani",
-            image: veggieBiryani,
+            image: matkavegbiryani,
             price: 20,
             description: "Food provides essential nutrients for overall health and well-being",
             category: "Biryani"
