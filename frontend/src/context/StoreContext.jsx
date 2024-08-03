@@ -1,9 +1,11 @@
 import { useState, createContext } from "react";
 export const StoreContext=createContext(null);
+
+
 const StoreContextProvider=(props)=>{
     const [cartItem,setCartItem]=useState({});
     const [category,setcategory]=useState("All");
-    const [food_list, setfood_list] = useState([]);
+    
     const addtocart=async(itemid)=>{
       if(!cartItem[itemid]){
         setCartItem({...cartItem,[itemid]:1});
@@ -30,7 +32,9 @@ const StoreContextProvider=(props)=>{
         setCartItem,
         addtocart,
         removefromcart,
-        gettotalamount
+        gettotalamount,
+        category,
+        setcategory,
       };
       return (
         <StoreContext.Provider value={contextValue}>
