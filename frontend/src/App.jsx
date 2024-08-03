@@ -1,3 +1,4 @@
+
 import "./App.css";
 import Foodcard from "./components/Foodcard.jsx";
 import Footer from "./components/Footer.jsx";
@@ -11,6 +12,7 @@ import Cart from './pages/Cart.jsx'
 function App() {
   return (
     <>
+
       <div className="app">
         <Navbar />
       <Routes>
@@ -21,6 +23,7 @@ function App() {
         <Exploremenuslider />
       </div>
       <Footer />
+
     </>
   );
 }
