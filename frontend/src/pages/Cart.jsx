@@ -5,6 +5,7 @@ import { food_list } from '../assets/Assets'
 const Cart = ({}) => {
   return (
     <>
+
     <div className="overflow-x-auto  mt-24 mx-7">
   <table className="table table-xs">
     <thead>
@@ -32,6 +33,7 @@ const Cart = ({}) => {
     
   </table>
 </div>
+
     </>
   )
 }
