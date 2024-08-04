@@ -15,6 +15,7 @@ const Cart = ({}) => {
       <tr>
         <th>image</th>
         <th>Name</th>
+        <th>Quantity</th>
         <th>price</th>
         <th>Remove</th>
         <th>Add</th>
@@ -27,7 +28,8 @@ const Cart = ({}) => {
         <tr>
         <td><img src={item.image} className='h-14 w-14 my-4 rounded-full' /></td>
         <td>{item.name}</td>
-        <td>₹ {item.price}</td>
+        <td>{cartItem[item._id]}</td>
+        <td>₹ {item.price*cartItem[item._id]}</td>
         <td><i className="fa-solid fa-trash"  onClick={()=>removefromcart(item.id)} ></i></td>
         <td><i className="fa-solid fa-cart-plus"  onClick={()=>addtocart(item.id)} ></i></td>
       </tr>
