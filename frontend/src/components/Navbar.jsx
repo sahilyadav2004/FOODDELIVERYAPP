@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -25,7 +26,7 @@ const Navbar = () => {
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow font-semibold">
         <li><a href="/">Home</a></li>
         <li>
-          <a href='/cart'>Cart</a>
+          <Link to='/cart'>Cart</Link>
         </li>
         <li><a>Contact Us</a></li>
       </ul>

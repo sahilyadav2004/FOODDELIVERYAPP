@@ -1,40 +1,35 @@
 import { useState, createContext } from "react";
 export const StoreContext=createContext(null);
-
-
 const StoreContextProvider=(props)=>{
-    const [cartItem,setCartItem]=useState({});
-    const [category,setcategory]=useState("All");
+    const [cartItems,setCartItems]=useState({});
     
     const addtocart=async(itemid)=>{
-      if(!cartItem[itemid]){
-        setCartItem({...cartItem,[itemid]:1});
-
+      if (!cartItems[itemid]) {
+        setCartItems((prev) => ({ ...prev, [itemid]: 1 }));
+      } else {
+        setCartItems((prev) => ({ ...prev, [itemid]: prev[itemid] + 1 }));
       }
-      else{
-        setCartItem({...cartItem,[itemid]:cartItem[itemid]+1});
-      }
+      console.log(cartItems);
     }
+
     const removefromcart=async(itemid)=>{
-      setCartItem({...cartItem,[itemid]:cartItem-1});
+      setCartItems((prev) => ({ ...prev, [itemid]: prev[itemid] - 1 }));
     }
     const gettotalamount=async(itemid)=>{
       let totalamount=0;
-      for(const i in cartItem){
-        if(cartItem[i]>0){
-          totalamount+=cartItem[i]*food_list[i].price;
+      for(const i in cartItems){
+        if(cartItems[i]>0){
+          totalamount+=cartItems[i]*food_list[i].price;
         }
       }
       return totalamount;
     }
     const contextValue = {
-        cartItem,
-        setCartItem,
+        cartItems,
+        setCartItems,
         addtocart,
         removefromcart,
         gettotalamount,
-        category,
-        setcategory,
       };
       return (
         <StoreContext.Provider value={contextValue}>
