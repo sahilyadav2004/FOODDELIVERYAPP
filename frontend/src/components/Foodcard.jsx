@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import  { StoreContext } from '../context/StoreContext'
 
 const Foodcard = ({ key, index, id, name, description, price, image ,category}) => {
+  const {addtocart}=useContext(StoreContext)
   return (
     <div className='border-black rounded-md border-2 p-5 m-2 w-80' key={key}>
     <div className='flex md:flex-col  '>
@@ -10,7 +12,7 @@ const Foodcard = ({ key, index, id, name, description, price, image ,category}) 
         <div className='font-semibold md:block hidden px-2'>{description}</div>
     </div>
     </div>
-    <div className='p-1 w-full text-center my-2 bg-green-700 rounded-lg text-white text-xl'>ADD TO CART</div>
+    <button className='p-1 w-full text-center my-2 bg-green-700 rounded-lg text-white text-xl' onClick={()=>{addtocart(id)}}>ADD TO CART</button>
     </div>
   )
 }

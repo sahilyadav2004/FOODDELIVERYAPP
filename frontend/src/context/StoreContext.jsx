@@ -3,16 +3,17 @@ export const StoreContext=createContext(null);
 
 
 const StoreContextProvider=(props)=>{
-    const [cartItem,setCartItem]=useState({});
+    const [cartItem,setCartItem]=useState({"-1":-1});
     const [category,setcategory]=useState("All");
     
     const addtocart=async(itemid)=>{
       if(!cartItem[itemid]){
-        setCartItem({...cartItem,[itemid]:1});
-
+        setCartItem({ ...cartItem, [itemid]: 1 });
+        console.log(cartItem);
       }
       else{
         setCartItem({...cartItem,[itemid]:cartItem[itemid]+1});
+        console.log(cartItem);
       }
     }
     const removefromcart=async(itemid)=>{
