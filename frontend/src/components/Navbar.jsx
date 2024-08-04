@@ -35,9 +35,9 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex font-semibold">
     <ul className="menu menu-horizontal px-1">
-      <li><a href="/">Home</a></li>
+      <li><Link to="/">Home</Link></li>
       <li>
-        <a href='/cart'>Cart</a>
+        <Link to='/cart'>Cart</Link>
       </li>
       <li><a>Contact Us</a></li>
     </ul>
