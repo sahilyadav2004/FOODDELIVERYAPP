@@ -28,7 +28,7 @@ const Navbar = () => {
         <li>
           <Link to='/cart'>Cart</Link>
         </li>
-        <li><a>Contact Us</a></li>
+        <li><Link to='/contactUs'>Contact Us</Link></li>
       </ul>
     </div>
     <a className="btn btn-ghost text-2xl">YumAPP</a>
@@ -39,11 +39,11 @@ const Navbar = () => {
       <li>
         <Link to='/cart'>Cart</Link>
       </li>
-      <li><a>Contact Us</a></li>
+      <li><Link to="/contactUs">Contact Us</Link></li>
     </ul>
   </div>
   <div className="navbar-end mx-5">
-    <a className="btn">LOGIN</a>
+    <Link to="/login" className="btn">LOGIN</Link>
   </div>
 </div>
     </>

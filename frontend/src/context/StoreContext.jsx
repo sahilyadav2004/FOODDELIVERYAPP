@@ -1,4 +1,5 @@
 import { useState, createContext } from "react";
+import { food_list } from "../assets/Assets";
 export const StoreContext=createContext(null);
 
 
@@ -17,17 +18,20 @@ const StoreContextProvider=(props)=>{
       }
     }
     const removefromcart=async(itemid)=>{
-      setCartItem({...cartItem,[itemid]:cartItem-1});
+      setCartItem({...cartItem,[itemid]:cartItem[itemid]-1});
     }
-    const gettotalamount=async(itemid)=>{
-      let totalamount=0;
-      for(const i in cartItem){
-        if(cartItem[i]>0){
-          totalamount+=cartItem[i]*food_list[i].price;
+    const gettotalamount = () => {
+      let totalAmount = 0;
+      for (const item in cartItem) {
+        if (cartItem[item] > 0) {
+          let itemInfo = food_list.find((product) => product._id === item);
+  
+          totalAmount += itemInfo.price * cartItem[item];
         }
       }
-      return totalamount;
-    }
+      return totalAmount;
+    };
+  
     const contextValue = {
         cartItem,
         setCartItem,
