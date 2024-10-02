@@ -42,7 +42,9 @@ const Navbar = () => {
       <li><a>Contact Us</a></li>
     </ul>
   </div>
+ 
   <div className="navbar-end mx-5">
+  <Link to ="/signin" className="btn">SignIn</Link>
     <a className="btn">LOGIN</a>
   </div>
 </div>
