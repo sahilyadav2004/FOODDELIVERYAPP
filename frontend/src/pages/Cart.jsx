@@ -39,6 +39,14 @@ const Cart = ({}) => {
     </tbody>
     
   </table>
+  <div>
+  <div className='flex justify-between w-[50%] mx-auto my-10 '>
+      <div className='text-2xl'>Net Total: ₹ {gettotalamount()}</div>
+      <div>
+        <button className='p-2 w-20 mx-2 rounded-md bg-green-400 font-semibold'>Pay</button>
+      </div>
+   </div>
+  </div>
 </div>
    <div className='flex justify-between w-[50%] mx-auto my-10 flex-col md:flex-row'>
       <div className='text-2xl m-2'>Net Total: ₹ {gettotalamount()}</div>

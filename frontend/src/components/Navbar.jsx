@@ -42,8 +42,12 @@ const Navbar = () => {
       <li><Link to="/contactUs">Contact Us</Link></li>
     </ul>
   </div>
+ 
   <div className="navbar-end mx-5">
+
+  <Link to ="/signin" className="btn">SignIn</Link>
     <Link to="/login" className="btn">LOGIN</Link>
+
   </div>
 </div>
     </>
