@@ -18,18 +18,20 @@ const StoreContextProvider=(props)=>{
       }
     }
     const removefromcart=async(itemid)=>{
-      setCartItem({...cartItem,[itemid]:cartItem-1});
+      setCartItem({...cartItem,[itemid]:cartItem[itemid]-1});
     }
-    const gettotalamount=()=>{
-      let totalamount=0;
-      for(const item in cartItem){
-        if(cartItem[item]>0){
-          let iteminfo=food_list.find((product)=>product._id===item);
-          totalamount+=cartItem[item]*iteminfo.price;
+    const gettotalamount = () => {
+      let totalAmount = 0;
+      for (const item in cartItem) {
+        if (cartItem[item] > 0) {
+          let itemInfo = food_list.find((product) => product._id === item);
+  
+          totalAmount += itemInfo.price * cartItem[item];
         }
       }
-      return totalamount;
-    }
+      return totalAmount;
+    };
+  
     const contextValue = {
         cartItem,
         setCartItem,

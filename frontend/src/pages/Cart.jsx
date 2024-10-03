@@ -26,12 +26,12 @@ const Cart = ({}) => {
         if(cartItem[item._id]>0){
           return (
         <tr>
-        <td><img src={item.image} className='h-14 w-14 my-4 rounded-full' /></td>
+        <td><img src={item.image} className='md:h-14 w-14 h-9 my-4 rounded-full md:rounded-sm ' /></td>
         <td>{item.name}</td>
         <td>{cartItem[item._id]}</td>
         <td>₹ {item.price*cartItem[item._id]}</td>
-        <td><i className="fa-solid fa-trash"  onClick={()=>removefromcart(item.id)} ></i></td>
-        <td><i className="fa-solid fa-cart-plus"  onClick={()=>addtocart(item.id)} ></i></td>
+        <td><i className="fa-solid fa-trash"  onClick={()=>removefromcart(item._id)} ></i></td>
+        <td><i className="fa-solid fa-cart-plus"  onClick={()=>addtocart(item._id)} ></i></td>
       </tr>
           )
         }
@@ -48,8 +48,13 @@ const Cart = ({}) => {
    </div>
   </div>
 </div>
-
-    </div>
+   <div className='flex justify-between w-[50%] mx-auto my-10 flex-col md:flex-row'>
+      <div className='text-2xl m-2'>Net Total: ₹ {gettotalamount()}</div>
+      <div>
+        <button className='p-2 w-20 m-2 rounded-md bg-green-400 font-semibold'>Pay</button>
+      </div>
+   </div>
+</div>
   )
 }
 
