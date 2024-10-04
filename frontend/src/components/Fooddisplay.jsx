@@ -1,8 +1,8 @@
 import React, { useContext, useEffect,useState } from 'react'
 import Foodcard from './Foodcard'
-import  { StoreContext } from '../context/StoreContext'
 import axios from "axios"
-import { food_list } from '../assets/Assets'
+
+
 const Fooddisplay = ({category}) => {
   const url = "http://localhost:3000";
   const [backendFoodList,setBackendFoodList]=useState([]);
