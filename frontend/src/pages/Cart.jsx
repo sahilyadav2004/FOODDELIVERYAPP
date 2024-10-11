@@ -3,8 +3,10 @@ import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import { food_list } from '../assets/Assets'
 import { StoreContext } from '../context/StoreContext'
+import { useNavigate } from 'react-router-dom'
 const Cart = ({}) => {
   const {cartItem,addtocart,removefromcart,gettotalamount}=useContext(StoreContext);
+  const navigate=useNavigate();
   return (
     
     <div className='min-h-[90%]'>
@@ -43,7 +45,7 @@ const Cart = ({}) => {
   <div className='flex justify-between w-[50%] mx-auto my-10 '>
       <div className='text-2xl'>Net Total: ₹ {gettotalamount()}</div>
       <div>
-        <button className='p-2 w-20 mx-2 rounded-md bg-green-400 font-semibold'>Pay</button>
+        <button onClick={()=>navigate("/order")} className='p-2 w-20 mx-2 rounded-md bg-green-400 font-semibold'>Pay</button>
       </div>
    </div>
   </div>
