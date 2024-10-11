@@ -8,7 +8,7 @@ import Exploremenuslider from "./components/Exploremenuslider.jsx";
 import {Routes,Route} from 'react-router-dom';
 import Home from './pages/Home.jsx'
 import Cart from './pages/Cart.jsx'
-
+import Placeorder from "./pages/Placeorder.jsx";
 import Signin from "./pages/Signin.jsx";
 
 import Login from "./pages/Login.jsx";
@@ -28,7 +28,7 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/signin" element={<Signin/>} />
         <Route path="/contactUs" element={<Contact/>} />
-
+        <Route path='/order' element={<Placeorder/>}/>
       </Routes>
       </div>
       <Footer />

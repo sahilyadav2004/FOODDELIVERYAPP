@@ -115,7 +115,7 @@ export const menu_list = [
             _id: "1",
             name: "Aloo Tikki Burger",
             image: alootikkiburger,
-            price: 12,
+            price: 120,
             description: "Food provides essential nutrients for overall health and well-being",
             category: "Burger"
         },
