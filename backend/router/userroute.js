@@ -5,6 +5,6 @@ const userRouter=express.Router()
 
 userRouter.post("/register",registerUser)
 userRouter.post("/login",loginUser)
-userRouter.post("/cartnull",cartnull)
+userRouter.post("/cartnull",cartnull) 
  
 export default userRouter

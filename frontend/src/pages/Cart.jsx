@@ -9,6 +9,41 @@ const Cart = ({}) => {
   const {cartItems,addToCart,removeFromCart,getTotalCartAmount,food_list,email}=useContext(StoreContext);
   const url = "http://localhost:3000"
   const navigate=useNavigate();
+
+  const checkout=async ()=>{
+    try{
+      const res = await fetch("http://localhost:3000/placeOrder",{
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        mode:"cors",
+        body:JSON.stringify({
+          items:[
+            {
+              id:1,
+              quantity:1,
+              price:getTotalCartAmount(),
+              name:"cart"
+            }
+          ]
+        })
+      });
+      const data=await res.json();
+      if (data.url) {
+        if(data.url=="http://localhost:5173/success"){
+          const response=await axios.post("http://localhost:3000/api/user/cartnull",{"email":localStorage.getItem("email")});
+          console.log(response.json());
+        }
+        window.location = data.url; 
+      } else {
+        console.error("Checkout session URL is undefined");
+      }
+    }
+    catch(error){
+      console.log(error);
+    }
+  }
+
+
   if(!email){
     return <Link className='flex justify-center flex-col items-center min-h-screen'  to="/login">
       please sigin or login!!!
@@ -54,7 +89,7 @@ const Cart = ({}) => {
     <div className='flex justify-between w-[50%] mx-auto my-10 '>
         <div className='text-2xl'>Net Total: ₹ {getTotalCartAmount()}</div>
         <div>
-          <button className='p-2 w-20 mx-2 rounded-md bg-green-400 font-semibold'>Pay</button>
+          <button className='p-2 w-20 mx-2 rounded-md bg-green-400 font-semibold' onClick={checkout}>Pay</button>
         </div>
      </div>
     </div>
