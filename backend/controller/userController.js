@@ -63,7 +63,7 @@ const cartnull=async(req,res)=>{
     user.cartData={};
     await user.save();
     res.json({success:true,message:"cart is null"});
-    // console.log("cart is now null !");
+    console.log("cart is now null !");
   }
   catch{
     console.log(error);
