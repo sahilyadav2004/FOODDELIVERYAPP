@@ -18,9 +18,9 @@ const Success = () => {
       clearCart();
     }, []);
   return (
-    <div className='flex justify-center items-center min-h-36'>
+    <div className='flex justify-center items-center min-h-96 flex-col'>
       Success!
-      <Link to='/' className='p-2 w-20 mx-2 rounded-md bg-green-400 font-semibold' >return to home!</Link>
+      <Link to='/' className='p-5 w-auto mx-2 rounded-md bg-green-400 font-semibold m-5' >return home!</Link>
     </div>
   )
 }
