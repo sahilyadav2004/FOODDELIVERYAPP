@@ -1,15 +1,10 @@
 import userModel from "../models/userModel.js";
 import bcrypt from "bcrypt";
 import validator from "validator";
-// import jwt from "jsonwebtoken";
 
 
-// const createToken=(id)=>{
-//   return jwt.sign({id},`${process.env.JWT_SECRET}`)t
-// }
 
-
-const loginUser = async (req, res) => {
+const loginUser = async (req, res) => { 
   const { email, password } = req.body;
   try {
     const user = await userModel.findOne({ email }); 
@@ -28,6 +23,8 @@ const loginUser = async (req, res) => {
     res.json({ success: false, message: "error" });
   }
 };
+
+
 const registerUser = async (req, res) => {
   const { email,name, password } = req.body;
   try {
@@ -52,11 +49,26 @@ const registerUser = async (req, res) => {
       password: hashedPassword,
     });
     await newUser.save();
-    // const token = createToken(user._id);
+    
     res.status(201).json({success:true,email, message: "User created successfully" });
   } catch (error) {
     console.log(error);
     res.json({ success: false, message: "error" });
   }
 };
-export { loginUser, registerUser };
+const cartnull=async(req,res)=>{
+  const { email, password } = req.body;
+  try{
+    const user = await userModel.findOne({ email }); 
+    user.cartData={};
+    await user.save();
+    res.json({success:true,message:"cart is null"});
+  }
+  catch{
+    console.log(error);
+    res.json({ success: false, message: "error" });
+  }
+ 
+
+};
+export { loginUser, registerUser,cartnull };

@@ -1,11 +1,14 @@
 import React, { useContext } from 'react'
-// import { food_list } from '../assets/Assets'
 import { StoreContext } from '../context/StoreContext'
 import {Link} from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
+
+
 
 const Cart = ({}) => {
   const {cartItems,addToCart,removeFromCart,getTotalCartAmount,food_list,email}=useContext(StoreContext);
   const url = "http://localhost:3000"
+  const navigate=useNavigate();
   if(!email){
     return <Link className='flex justify-center flex-col items-center min-h-screen'  to="/login">
       please sigin or login!!!
@@ -59,6 +62,7 @@ const Cart = ({}) => {
     </div>
     )
   }
+
 }
 
 export default Cart

@@ -1,9 +1,11 @@
+
 import { useState,useContext } from 'react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import { StoreContext } from '../context/StoreContext';
 import { useNavigate } from 'react-router-dom';
+
 
 const Signin = () => {
   const {email,setemail}=useContext(StoreContext)
@@ -62,4 +64,3 @@ const onSignin=async (event)=>{
 }
 
 export default Signin
-
