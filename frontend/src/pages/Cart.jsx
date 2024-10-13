@@ -1,8 +1,10 @@
+
 import React, { useContext } from 'react'
 import { StoreContext } from '../context/StoreContext'
 import {Link} from "react-router-dom"
 import { useNavigate } from 'react-router-dom'
-import axios from 'axios'
+
+
 
 const Cart = ({}) => {
   const {cartItems,addToCart,removeFromCart,getTotalCartAmount,food_list,email}=useContext(StoreContext);
@@ -28,10 +30,6 @@ const Cart = ({}) => {
       });
       const data=await res.json();
       if (data.url) {
-        if(data.url=="http://localhost:5173/success"){
-          const response=await axios.post("http://localhost:3000/api/user/cartnull",{"email":localStorage.getItem("email")});
-          console.log(response.json());
-        }
         window.location = data.url; 
       } else {
         console.error("Checkout session URL is undefined");
