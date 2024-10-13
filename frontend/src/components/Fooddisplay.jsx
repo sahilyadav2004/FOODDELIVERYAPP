@@ -29,7 +29,7 @@ const Fooddisplay = ({category}) => {
       {backendFoodList.map((item,index)=>{
         if(category==='All' || category===item.category){
           return <>
-            <Foodcard  name={item.name} image={`${url}/images/`+item.image}  category={item.category} price={item.price} description={item.description} key={index} id={item._id} />
+            <Foodcard  name={item.name} image={`${url}/images/`+item.image}  category={item.category} price={item.price} description={item.description} key={item._id} id={item._id} />
           </>
         }
       })}

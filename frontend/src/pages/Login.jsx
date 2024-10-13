@@ -3,10 +3,13 @@ import { Link } from 'react-router-dom'
 import { useState,useContext} from 'react';
 import { StoreContext } from '../context/StoreContext';
 import axios from "axios"; 
+import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-  const {token,settoken}=useContext(StoreContext)
+  const {email,setemail}=useContext(StoreContext)
+  const navigate = useNavigate();
+
   const url="http://localhost:3000";
   const [data, setdata] = useState({
     name:"",
@@ -28,8 +31,9 @@ const onLogin=async (event)=>{
     const newUrl = `${url}/api/user/login`
     const response=await axios.post(newUrl,data)
     if(response.data.success){
-        settoken(response.data.token);
-        localStorage.setItem("token",response.data.token)
+        setemail(response.data.email);
+        localStorage.setItem("email",response.data.email)
+        navigate("/");
     }
     else{
         alert(response.data.message)

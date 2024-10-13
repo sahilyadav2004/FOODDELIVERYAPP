@@ -4,11 +4,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import { StoreContext } from '../context/StoreContext';
+import { useNavigate } from 'react-router-dom';
 
 
 const Signin = () => {
-  const {token,settoken}=useContext(StoreContext)
-
+  const {email,setemail}=useContext(StoreContext)
+  const navigate = useNavigate()
   const url="http://localhost:3000";
   const [data, setdata] = useState({
     name:"",
@@ -28,8 +29,10 @@ const onSignin=async (event)=>{
     const newUrl = `${url}/api/user/register`
     const response=await axios.post(newUrl,data)
     if(response.data.success){
-        settoken(response.data.token);
-        localStorage.setItem("token",response.data.token)
+        setemail(response.data.email);
+        localStorage.setItem("email",response.data.email)
+        alert("signed in !");
+        navigate("/home");
     }
     else{
         alert(response.data.message)
