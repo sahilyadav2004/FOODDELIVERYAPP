@@ -57,13 +57,13 @@ const registerUser = async (req, res) => {
   }
 };
 const cartnull=async(req,res)=>{ 
-  const { email, password } = req.body;
+  const { email } = req.body;
   try{
     const user = await userModel.findOne({ email }); 
     user.cartData={};
     await user.save();
+    console.log(user.cartData);
     res.json({success:true,message:"cart is null"});
-    console.log("cart is now null !");
   }
   catch{
     console.log(error);

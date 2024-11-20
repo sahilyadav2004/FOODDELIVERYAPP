@@ -1,8 +1,9 @@
-import React, { useContext } from 'react';
-import { StoreContext } from '../context/StoreContext';
-import {Link} from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
+
+import React, { useContext } from 'react'
+import { StoreContext } from '../context/StoreContext'
+import {Link} from "react-router-dom"
+import { useNavigate } from 'react-router-dom'
+
 
 
 const Cart = ({}) => {
