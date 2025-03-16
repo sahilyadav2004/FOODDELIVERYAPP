@@ -7,9 +7,10 @@ import { useNavigate } from 'react-router-dom';
 
 
 const Login = () => {
-  const {email,setemail}=useContext(StoreContext)
+  const {email,setemail}=useContext(StoreContext);
+  
   const navigate = useNavigate();
-
+ 
   const url="http://localhost:3000";
   const [data, setdata] = useState({
     name:"",
@@ -41,6 +42,7 @@ const onLogin=async (event)=>{
 }
 
   return (
+    <div className="login h-[550px]">
     <div className='my-7 mx-auto  flex flex-col items-center justify-center h-[330px]'>
         
       <form  onSubmit={onLogin} className='flex flex-col  border-black rounded-lg   md:w-[30%] md:min-h-[299px] justify-center items-center shadow-black shadow-xl p-7 md:p-0'>
@@ -57,6 +59,7 @@ const onLogin=async (event)=>{
         <button type="submit" className='w-1/2 p-1  text-center my-2 bg-green-700 rounded-lg text-white text-xl'>Login in</button>
       </form>
       
+    </div>
     </div>
   ) 
 }
