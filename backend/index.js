@@ -58,3 +58,12 @@ app.get("/",(req,res)=>{
 app.listen(port,()=>{
     console.log("The app is listening at port"+`${port}`);
 })
+import path from 'path';
+const __dirname = path.resolve();
+
+// Serve React frontend
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '../frontend/build/index.html'));
+});
