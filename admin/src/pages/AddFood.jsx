@@ -4,7 +4,7 @@ import { useState,useEffect } from 'react'
 import { toast } from 'react-toastify'
 
 const AddFood = () => {
-  const url="http://localhost:3000"
+  const url="https://fooddeliveryapp-backend-5zv5.onrender.com"
   const [image, setimage] = useState(false)
     const [data, setdata] = useState({
         name: '',
