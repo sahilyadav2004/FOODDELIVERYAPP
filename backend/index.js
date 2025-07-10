@@ -11,7 +11,15 @@ dotenv.config();
 const app = express();
 const port=process.env.port || 3000;
 app.use(express.json());
-app.use(cors({ origin: ["http://localhost:5173", "http://localhost:5174"] }));
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:5174",
+    "https://fooddeliveryapp-frontend-i3me.onrender.com"
+  ],
+  credentials: true
+}));
+
 connectDB();
 
 app.use("/api/user",userRouter);
@@ -38,8 +46,8 @@ app.post("/placeOrder", async (req, res) => {
           },
           quantity: item.quantity,
         })),
-        success_url: "http://localhost:5173/success",
-        cancel_url: "http://localhost:5173/cancel",
+        success_url: "https://fooddeliveryapp-frontend-i3me.onrender.com/success",
+        cancel_url: "https://fooddeliveryapp-frontend-i3me.onrender.com/cancel",
       });
   
       res.json({ url: session.url }); // Send session URL to frontend
