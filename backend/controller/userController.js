@@ -1,5 +1,5 @@
 import userModel from "../models/userModel.js";
-import bcrypt from "bcrypt";
+import bcryptjs from "bcryptjs";
 import validator from "validator";
 
 
@@ -11,7 +11,7 @@ const loginUser = async (req, res) => {
     if (!user) {
       return res.status(400).json({ success:false,message: "Invalid email" });
     }
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcryptjs.compare(password, user.password);
     if (!isMatch) {
       return res.status(400).json({success:false, message: "Invalid  password" });
     }
@@ -42,7 +42,7 @@ const registerUser = async (req, res) => {
         message: "Please enter a strong password",
       });
     }
-    const hashedPassword = await bcrypt.hash(password, 10);
+    const hashedPassword = await bcryptjs.hash(password, 10);
     const newUser = new userModel({
       email,
       name,
