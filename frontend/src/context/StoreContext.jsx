@@ -3,7 +3,7 @@ import { useState, createContext,useEffect ,useContext} from "react";
 import { food_list } from "../assets/Assets";
 import axios from "axios";
 export const StoreContext = createContext(null);
-
+ 
 
 
 
@@ -16,7 +16,7 @@ const StoreContextProvider = (props) => {
   const addToCart = async(itemId) => {
     if(!email){
       console.log("please login");
-      alert("please login of signin first!")
+      alert("please login or signin first!")
     }
     else {
       console.log("addToCart: Adding item with ID:", itemId);
@@ -80,7 +80,7 @@ const StoreContextProvider = (props) => {
         console.log("email loaded:"+ email);
       }
       else{
-        console.log("please sigin or login!");
+        alert("please sigin or login!");
       }
     } 
     loadData()

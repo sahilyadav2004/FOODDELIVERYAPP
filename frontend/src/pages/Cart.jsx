@@ -9,7 +9,7 @@ const Cart = ({}) => {
   const {cartItems,addToCart,removeFromCart,getTotalCartAmount,food_list,email}=useContext(StoreContext);
   const url = "http://localhost:3000"
   const navigate=useNavigate();
-
+ 
   const checkout=async ()=>{
     try{
       const res = await fetch("http://localhost:3000/placeOrder",{
@@ -41,14 +41,15 @@ const Cart = ({}) => {
 
 
   if(!email){
-    return <Link className='flex justify-center flex-col items-center min-h-screen'  to="/login">
+    return <div className='bg-cover bg-center flex justify-center flex-col items-center min-h-screen font-extrabold text-3xl bg-[url("https://www.shutterstock.com/image-vector/supermarket-shopping-cart-delivery-store-260nw-2172709421.jpg")]'><Link   to="/login">
       please sigin or login!!!
     </Link>
+    </div>
   }
   else{
     return (
     
-      <div className='min-h-[90%]'>
+      <div className='min-h-[500px]'>
   
       <div className="overflow-x-auto  mt-24 mx-7">
     <table className="table table-xs">

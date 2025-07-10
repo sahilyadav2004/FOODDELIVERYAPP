@@ -23,7 +23,7 @@ const onChangeHandler=(event)=>{
     const value=event.target.value
     console.log(name + " : "+value);
     setdata(data=>({...data,[name]:value}))
-}
+} 
 const onSignin=async (event)=>{
     event.preventDefault()
     const newUrl = `${url}/api/user/register`
@@ -32,7 +32,7 @@ const onSignin=async (event)=>{
         setemail(response.data.email);
         localStorage.setItem("email",response.data.email)
         alert("signed in !");
-        navigate("/home");
+        navigate("/");
     }
     else{
         alert(response.data.message)
@@ -41,6 +41,7 @@ const onSignin=async (event)=>{
 
 
     return (
+      <div className="container h-[550px]">
         <div className='my-7 mx-auto  flex flex-col items-center justify-center py-5' >
           <form  onSubmit={onSignin} className='flex flex-col  border-black rounded-lg   w-[30%] min-h-[299px] justify-center items-center shadow-black shadow-xl'>
           <h1 className='text-black text-4xl mb-6 text-semibold '>SIGN IN</h1>
@@ -59,6 +60,7 @@ const onSignin=async (event)=>{
             <Link to="/login" className='text-center'>Already signed in! Login here!!!</Link>
             <button type="submit"  className='w-1/2 p-1  text-center my-2 bg-green-700 rounded-lg text-white text-xl' >Sigin</button>
           </form>
+        </div>
         </div>
       ) 
 }
