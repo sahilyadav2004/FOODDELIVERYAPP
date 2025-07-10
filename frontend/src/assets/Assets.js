@@ -71,7 +71,7 @@ export const Assets={
 
 export const menu_list = [
     {
-        menu_name: "Cake",
+        menu_name: "cake",
         menu_image: blackforest
     },
     {
