@@ -15,7 +15,8 @@ app.use(cors({
   origin: [
     "http://localhost:5173",
     "http://localhost:5174",
-    "https://fooddeliveryapp-frontend-i3me.onrender.com"
+    "https://fooddeliveryapp-frontend-i3me.onrender.com",
+    "https://fooddeliveryapp-admin-dkau.onrender.com"
   ],
   credentials: true
 }));
