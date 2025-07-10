@@ -8,7 +8,7 @@ const Success = () => {
       const clearCart = async () => {
         try {
           const email = localStorage.getItem("email");
-          const response = await axios.post("http://localhost:3000/api/user/cartnull", { email });
+          const response = await axios.post("https://fooddeliveryapp-backend-5zv5.onrender.com/api/user/cartnull", { email });
           console.log(response.data); // Check response
         } catch (error) {
           console.error("Error clearing cart:", error);

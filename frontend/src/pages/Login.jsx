@@ -11,7 +11,7 @@ const Login = () => {
   
   const navigate = useNavigate();
  
-  const url="http://localhost:3000";
+  const url="https://fooddeliveryapp-backend-5zv5.onrender.com";
   const [data, setdata] = useState({
     name:"",
     email:"",

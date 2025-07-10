@@ -7,12 +7,12 @@ import axios from 'axios';
 
 const Cart = ({}) => {
   const {cartItems,addToCart,removeFromCart,getTotalCartAmount,food_list,email}=useContext(StoreContext);
-  const url = "http://localhost:3000"
+  const url = "https://fooddeliveryapp-backend-5zv5.onrender.com"
   const navigate=useNavigate();
  
   const checkout=async ()=>{
     try{
-      const res = await fetch("http://localhost:3000/placeOrder",{
+      const res = await fetch("https://fooddeliveryapp-backend-5zv5.onrender.com/placeOrder",{
         method:"POST",
         headers:{"Content-Type":"application/json"},
         mode:"cors",

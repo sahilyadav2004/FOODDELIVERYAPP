@@ -4,7 +4,7 @@ import axios from "axios"
 
 
 const Fooddisplay = ({category}) => {
-  const url = "http://localhost:3000";
+  const url = "https://fooddeliveryapp-backend-5zv5.onrender.com";
   const [backendFoodList,setBackendFoodList]=useState([]);
   
   const listFood = async(req,res)=>{
